@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.DescontoParceirosUR" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/Primary</item>
+    </style>
+
+    <style name="Theme.DescontoParceirosUR" parent="Base.Theme.DescontoParceirosUR" />
+</resources>
