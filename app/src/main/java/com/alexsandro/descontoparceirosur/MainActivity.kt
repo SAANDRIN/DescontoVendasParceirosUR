@@ -33,11 +33,8 @@ class MainActivity : AppCompatActivity() {
             val materiais = editMateriais.text.toString()
             val frete = editFrete.text.toString()
 
-            intent.putExtra("materiais", "Materiais: R$$materiais")
-            intent.putExtra("frete", "Frete: R$$frete")
-
             // -------------------------------------------------------
-            
+
             val validacao = validarCampos(materiais, frete)
 
             if (validacao) {
@@ -45,16 +42,40 @@ class MainActivity : AppCompatActivity() {
                 val valorTotal = calcularTotal(materiais, frete)
                 intent.putExtra("total", valorTotal)
 
-                startActivity(intent)
+                val desconto = if (valorTotal < 800.00){
+                                     0.0
+                                } else if (valorTotal in 800.00 .. 1300.00){
+                                     0.5
+                                } else {
+                                    1.0
+                                }
+
+                intent.putExtra(
+                    "desconto",
+
+                    "- Desconto aplicado: ${(desconto * 100).toInt()}%\n- ${(desconto * 100).toInt()}% do Frete: R$${(frete.toDouble()) * desconto}\n- Total com desconto: R$${valorTotal - ((frete.toDouble()) * desconto)}")
+
+
             }
+            // -------------------------------------------------------
+
+            val materiaisDouble = materiais.toDouble()
+            val freteDouble = frete.toDouble()
+
+            intent.putExtra("materiais", "Materiais: R$$materiaisDouble")
+            intent.putExtra("frete", "Frete: R$$freteDouble")
 
             // ---------------------------------------------------------
 
 
 
+            startActivity(intent)
+
         }
 
     }
+
+
 
     private fun calcularTotal(materiais: String, frete: String) : Double {
 

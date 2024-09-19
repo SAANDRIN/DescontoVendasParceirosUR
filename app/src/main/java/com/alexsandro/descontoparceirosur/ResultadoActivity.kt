@@ -30,10 +30,13 @@ class ResultadoActivity : AppCompatActivity() {
         val total = bundle?.getDouble("total")
         textTotal.text = "Valor Total: R$$total"
 
+        val resultado = bundle?.getString("desconto")
+        textResultado.text = resultado
 
 
 
     }
+
 
     private fun inicializarComponentesInterface(){
 
