@@ -67,6 +67,7 @@
         android:text="Resultado"
         android:textColor="#F57C00"
         android:textSize="20sp"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
