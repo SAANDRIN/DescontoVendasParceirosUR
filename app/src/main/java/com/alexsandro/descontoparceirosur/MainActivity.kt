@@ -48,10 +48,20 @@ class MainActivity : AppCompatActivity() {
                                     1.0
                                 }
 
-                intent.putExtra(
-                    "desconto",
+                if (valorTotal > 1800.00) {
+                    intent.putExtra(
+                        "desconto",
 
-                    "- Desconto aplicado: ${(desconto * 100).toInt()}%\n- ${(desconto * 100).toInt()}% do Frete: R$${(frete.toDouble()) * desconto}\n- Total com desconto: R$${valorTotal - ((frete.toDouble()) * desconto)}")
+                        "- Desconto aplicado: ${(desconto * 100).toInt()}%\n- ${(desconto * 100).toInt()}% do Frete: R$${(frete.toDouble()) * desconto}\n- Total com desconto: R$${valorTotal - ((frete.toDouble()) * desconto)}\n" +
+                                "- + Bônus Surpresa ")
+
+                } else {
+                    intent.putExtra(
+                        "desconto",
+
+                        "- Desconto aplicado: ${(desconto * 100).toInt()}%\n- ${(desconto * 100).toInt()}% do Frete: R$${(frete.toDouble()) * desconto}\n- Total com desconto: R$${valorTotal - ((frete.toDouble()) * desconto)}")
+
+                }
 
                 // -------------------------------------------------------
                 val materiaisDouble = materiais.toDouble()
