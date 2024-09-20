@@ -28,8 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         btnCalcular.setOnClickListener {
 
-
-
             val materiais = editMateriais.text.toString()
             val frete = editFrete.text.toString()
 
@@ -55,27 +53,20 @@ class MainActivity : AppCompatActivity() {
 
                     "- Desconto aplicado: ${(desconto * 100).toInt()}%\n- ${(desconto * 100).toInt()}% do Frete: R$${(frete.toDouble()) * desconto}\n- Total com desconto: R$${valorTotal - ((frete.toDouble()) * desconto)}")
 
-
             }
             // -------------------------------------------------------
-
             val materiaisDouble = materiais.toDouble()
             val freteDouble = frete.toDouble()
 
             intent.putExtra("materiais", "Materiais: R$$materiaisDouble")
             intent.putExtra("frete", "Frete: R$$freteDouble")
-
             // ---------------------------------------------------------
-
-
 
             startActivity(intent)
 
         }
 
     }
-
-
 
     private fun calcularTotal(materiais: String, frete: String) : Double {
 
@@ -102,7 +93,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     private fun inicializarComponentesInterface(){
 
         textInputMateriais = findViewById( R.id.text_input_materiais )
@@ -114,7 +104,5 @@ class MainActivity : AppCompatActivity() {
         btnCalcular = findViewById( R.id.btn_calcular )
 
     }
-
-
 
 }
