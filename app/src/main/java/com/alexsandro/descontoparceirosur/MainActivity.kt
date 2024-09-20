@@ -53,16 +53,18 @@ class MainActivity : AppCompatActivity() {
 
                     "- Desconto aplicado: ${(desconto * 100).toInt()}%\n- ${(desconto * 100).toInt()}% do Frete: R$${(frete.toDouble()) * desconto}\n- Total com desconto: R$${valorTotal - ((frete.toDouble()) * desconto)}")
 
+                // -------------------------------------------------------
+                val materiaisDouble = materiais.toDouble()
+                val freteDouble = frete.toDouble()
+
+                intent.putExtra("materiais", "Materiais: R$$materiaisDouble")
+                intent.putExtra("frete", "Frete: R$$freteDouble")
+                // ---------------------------------------------------------
+
+                startActivity(intent)
+
             }
-            // -------------------------------------------------------
-            val materiaisDouble = materiais.toDouble()
-            val freteDouble = frete.toDouble()
 
-            intent.putExtra("materiais", "Materiais: R$$materiaisDouble")
-            intent.putExtra("frete", "Frete: R$$freteDouble")
-            // ---------------------------------------------------------
-
-            startActivity(intent)
 
         }
 
