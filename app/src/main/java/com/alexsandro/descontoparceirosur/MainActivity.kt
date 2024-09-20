@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
                 val desconto = if (valorTotal < 800.00){
                                      0.0
-                                } else if (valorTotal in 800.00 .. 1300.00){
+                                } else if (valorTotal in 800.00 .. 1200.00){
                                      0.5
                                 } else {
                                     1.0
