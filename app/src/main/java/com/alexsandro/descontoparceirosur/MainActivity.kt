@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
 
@@ -95,9 +96,11 @@ class MainActivity : AppCompatActivity() {
 
         if( materiais.isEmpty() ){
             textInputMateriais.error = "Digite o subtotal dos materiais"
+            Toast.makeText(this, "Digite o subtotal dos materiais", Toast.LENGTH_SHORT).show()
             return false
         } else if ( frete.isEmpty() ){
             textInputFrete.error = "Digite o valor do frete"
+            Toast.makeText(this, "Digite o valor do frete", Toast.LENGTH_SHORT).show()
             return false
         }
 
